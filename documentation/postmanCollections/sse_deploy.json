@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "1f4f0b88-9ab9-483c-a841-9219e088bdb9",
+		"name": "[CPG] Server Side Extension",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "[OCC][ADMIN][STAGE] Login Admin - User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/plain",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "{{admin_username}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{admin_password}}",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{admin_host}}/ccadmin/v1/login",
+					"host": [
+						"{{admin_host}}"
+					],
+					"path": [
+						"ccadmin",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[OCC][ADMIN][[PROD] Login Admin - User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/plain",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "{{admin_username}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{admin_password}}",
+							"type": "text"
+						},
+						{
+							"key": "totp_code",
+							"value": "{{admin_code}}",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{admin_host}}/ccadmin/v1/mfalogin",
+					"host": [
+						"{{admin_host}}"
+					],
+					"path": [
+						"ccadmin",
+						"v1",
+						"mfalogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[OCC][ADMIN] Server side extension deploy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{admin_access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "filename",
+							"value": "customGatewayBraspag.zip",
+							"type": "text"
+						},
+						{
+							"key": "uploadType",
+							"value": "extensions",
+							"type": "text"
+						},
+						{
+							"key": "force",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "fileUpload",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "{{admin_host}}/ccadmin/v1/serverExtensions",
+					"host": [
+						"{{admin_host}}"
+					],
+					"path": [
+						"ccadmin",
+						"v1",
+						"serverExtensions"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

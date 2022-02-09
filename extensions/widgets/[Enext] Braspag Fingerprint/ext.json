@@ -1,0 +1,9 @@
+{
+  "extensionID": "53d438af-8f54-4446-b6e4-60e0047a438b",
+  "createdBy": "Enext",
+  "description": "Fingerprint and Google Tag Manager implementation to increment fraud analysis",
+  "developerID": "Rogerio Santos",
+  "name": "[Enext] Braspag Fingerprint Widget",
+  "timeCreated": "2019-07-05",
+  "version": 1
+}

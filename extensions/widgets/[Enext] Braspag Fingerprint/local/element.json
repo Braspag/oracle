@@ -1,0 +1,22 @@
+{
+  "availableToAllWidgets": false,
+  "configOptions": [],
+  "global": false,
+  "inline": false,
+  "supportedWidgetType": ["enextPaymentGatewayOptions"],
+  "tag": "debit-card-payment",
+  "translations": [
+  {
+    "description": "",
+    "language": "pt_BR",
+    "title": "Pagamento por cartão de débito"
+  },
+  {
+    "description": "Debit Card Payment",
+    "language": "en",
+    "title": "Debit Card Payment"
+  }
+],
+  "type": "fragment",
+  "version": 6
+}

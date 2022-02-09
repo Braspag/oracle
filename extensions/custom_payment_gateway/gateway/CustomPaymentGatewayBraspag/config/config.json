@@ -1,0 +1,514 @@
+{
+    "configType": "payment",
+    "titleResourceId": "title",
+    "descriptionResourceId": "description",
+    "instances": [
+        {
+            "id": "agent",
+            "instanceName": "agent",
+            "labelResourceId": "agentInstanceLabel"
+        },
+        {
+            "id": "preview",
+            "instanceName": "preview",
+            "labelResourceId": "previewInstanceLabel"
+        },
+        {
+            "id": "storefront",
+            "instanceName": "storefront",
+            "labelResourceId": "storefrontInstanceLabel"
+        }
+    ],
+    "properties": [
+        {
+            "id": "paymentMethodTypes",
+            "type": "multiSelectOptionType",
+            "name": "paymentMethodTypes",
+            "helpTextResourceId": "paymentMethodsHelpText",
+            "labelResourceId": "paymentMethodsLabel",
+            "displayAsCheckboxes": true,
+            "defaultValue": "card,cash",
+            "options": [
+                {
+                    "id": "card",
+                    "value": "card",
+                    "labelResourceId": "cardLabel"
+                },
+                {
+                    "id": "cash",
+                    "value": "cash",
+                    "labelResourceId": "cashLabel"
+                }
+            ],
+            "required": false
+        },
+        {
+            "id": "paymentProviderName",
+            "type": "optionType",
+            "name": "paymentProviderName",
+            "helpTextResourceId": "paymentProviderNameHelpText",
+            "labelResourceId": "paymentProviderNameLabel",
+            "defaultValue": "braspag",
+            "options": [
+                {
+                    "id": "braspag",
+                    "value": "braspag",
+                    "labelResourceId": "braspagLabel"
+                }
+            ],
+            "required": false
+        },
+        {
+            "id": "paymentProviderMerchantId",
+            "type": "stringType",
+            "name": "paymentProviderMerchantId",
+            "helpTextResourceId": "paymentProviderMerchantIdHelpText",
+            "labelResourceId": "paymentProviderMerchantIdLabel",
+            "defaultValue": "9F75A292-B361-413B-B011-E53FD18150EE",
+            "required": false
+        },
+        {
+            "id": "paymentProviderMerchantKey",
+            "type": "stringType",
+            "name": "paymentProviderMerchantKey",
+            "helpTextResourceId": "paymentProviderMerchantKeyHelpText",
+            "labelResourceId": "paymentProviderMerchantKeyLabel",
+            "defaultValue": "MJTMCNWHRRFSOKOCJNKRWNXISVFIUONZYILDXDCW",
+            "required": false
+        },
+        {
+            "id": "creditCardProvider",
+            "type": "optionType",
+            "name": "creditCardProvider",
+            "helpTextResourceId": "creditCardProviderHelpText",
+            "labelResourceId": "creditCardProviderLabel",
+            "defaultValue": "Simulado",
+            "options": [
+                {
+                    "id": "Simulado",
+                    "value": "Simulado",
+                    "labelResourceId": "SimuladoLabel"
+                },
+                {
+                    "id": "Cielo30",
+                    "value": "Cielo30",
+                    "labelResourceId": "Cielo30Label"
+                },
+                {
+                    "id": "Redecard",
+                    "value": "Redecard",
+                    "labelResourceId": "RedecardLabel"
+                },
+                {
+                    "id": "Rede2",
+                    "value": "Rede2",
+                    "labelResourceId": "RedeLabel"
+                },
+                {
+                    "id": "Getnet",
+                    "value": "Getnet",
+                    "labelResourceId": "GetnetLabel"
+                }
+            ],
+            "required": false
+        },
+        {
+            "id": "cashProvider",
+            "type": "optionType",
+            "name": "cashProvider",
+            "helpTextResourceId": "cashProviderHelpText",
+            "labelResourceId": "cashProviderLabel",
+            "defaultValue": "Simulado",
+            "options": [
+                {
+                    "id": "cashSimulado",
+                    "value": "Simulado",
+                    "labelResourceId": "cashSimuladoLabel"
+                },
+                {
+                    "id": "bradesco",
+                    "value": "Bradesco2",
+                    "labelResourceId": "bradescoLabel"
+                },
+                {
+                    "id": "bancoDoBrasil",
+                    "value": "BancoDoBrasil2",
+                    "labelResourceId": "bancoDoBrasilLabel"
+                },
+                {
+                    "id": "santander",
+                    "value": "Santander2",
+                    "labelResourceId": "santanderLabel"
+                },
+                {
+                    "id": "caixa",
+                    "value": "Caixa2",
+                    "labelResourceId": "caixaLabel"
+                }
+            ],
+            "required": false
+        },
+        {
+            "id": "cashProvidersCustomFields",
+            "type": "multiSelectOptionType",
+            "name": "cashProvidersCustomFields",
+            "helpTextResourceId": "cashProvidersCustomFieldsHelpText",
+            "labelResourceId": "cashProvidersCustomFieldsLabel",
+            "displayAsCheckboxes": true,
+            "options": [
+                {
+                    "id": "nullifyDaysOptions",
+                    "value": "NullifyDays",
+                    "helpTextResourceId": "santanderCustomFieldsHelpText",
+                    "labelResourceId": "nullifyDaysOptionsLabel"
+                },
+                {
+                    "id": "daysToFineOptions",
+                    "value": "DaysToFine",
+                    "helpTextResourceId": "bradescoCustomFieldsHelpText",
+                    "labelResourceId": "daysToFineOptionsLabel"
+                },
+                {
+                    "id": "fineRateOptions",
+                    "value": "FineRate",
+                    "helpTextResourceId": "bradescoCustomFieldsHelpText",
+                    "labelResourceId": "fineRateOptionsLabel"
+                },
+                {
+                    "id": "fineAmountOptions",
+                    "value": "FineAmount",
+                    "helpTextResourceId": "bradescoCustomFieldsHelpText",
+                    "labelResourceId": "fineAmountOptionsLabel"
+                },
+                {
+                    "id": "daysToInterestOptions",
+                    "value": "DaysToInterest",
+                    "helpTextResourceId": "bradescoCustomFieldsHelpText",
+                    "labelResourceId": "daysToInterestOptionsLabel"
+                },
+                {
+                    "id": "interestRateOptions",
+                    "value": "InterestRate",
+                    "helpTextResourceId": "bradescoCustomFieldsHelpText",
+                    "labelResourceId": "interestRateOptionsLabel"
+                },
+                {
+                    "id": "interestAmountOptions",
+                    "value": "InterestAmount",
+                    "helpTextResourceId": "bradescoCustomFieldsHelpText",
+                    "labelResourceId": "interestAmountOptionsLabel"
+                }
+            ],
+            "required": false
+        },
+        {
+            "id": "NullifyDays",
+            "type": "stringType",
+            "pattern": "^[1-9][0-9]?$|^99$",
+            "name": "NullifyDays",
+            "helpTextResourceId": "santanderCustomFieldsHelpText",
+            "labelResourceId": "nullifyDaysLabel",
+            "required": false
+        },
+        {
+            "id": "DaysToFine",
+            "type": "stringType",
+            "name": "DaysToFine",
+            "helpTextResourceId": "bradescoCustomFieldsHelpText",
+            "labelResourceId": "daysToFineLabel",
+            "required": false
+        },
+        {
+            "id": "FineRate",
+            "type": "stringType",
+            "name": "FineRate",
+            "helpTextResourceId": "bradescoCustomFieldsHelpText",
+            "labelResourceId": "fineRateLabel",
+            "required": false
+        },
+        {
+            "id": "FineAmount",
+            "type": "stringType",
+            "name": "FineAmount",
+            "helpTextResourceId": "bradescoCustomFieldsHelpText",
+            "labelResourceId": "fineAmountLabel",
+            "required": false
+        },
+        {
+            "id": "DaysToInterest",
+            "type": "stringType",
+            "name": "DaysToInterest",
+            "helpTextResourceId": "bradescoCustomFieldsHelpText",
+            "labelResourceId": "daysToInterestLabel",
+            "required": false
+        },
+        {
+            "id": "InterestRate",
+            "type": "stringType",
+            "name": "InterestRate",
+            "helpTextResourceId": "bradescoCustomFieldsHelpText",
+            "labelResourceId": "interestRateLabel",
+            "required": false
+        },
+        {
+            "id": "InterestAmount",
+            "type": "stringType",
+            "name": "InterestAmount",
+            "helpTextResourceId": "bradescoCustomFieldsHelpText",
+            "labelResourceId": "interestAmountLabel",
+            "required": false
+        },
+        {
+            "id": "use3dsAuthentication",
+            "type": "booleanType",
+            "name": "use3dsAuthentication",
+            "helpTextResourceId": "use3dsAuthenticationHelpText",
+            "labelResourceId": "use3dsAuthenticationLabel",
+            "defaultValue": false
+        },
+        {
+            "id": "useAntifraudWith3dsAuthenticationFail",
+            "type": "booleanType",
+            "name": "useAntifraudWith3dsAuthenticationFail",
+            "helpTextResourceId": "useAntifraudWith3dsAuthenticationFailHelpText",
+            "labelResourceId": "useAntifraudWith3dsAuthenticationFailLabel",
+            "defaultValue": false
+        },
+        {
+            "id": "paymentProvider3dsAuthenticationClientId",
+            "type": "stringType",
+            "name": "paymentProvider3dsAuthenticationClientId",
+            "helpTextResourceId": "paymentProvider3dsAuthenticationClientIdHelpText",
+            "labelResourceId": "paymentProvider3dsAuthenticationClientIdLabel",
+            "defaultValue": "dba3a8db-fa54-40e0-8bab-7bfb9b6f2e2e",
+            "required": false
+        },
+        {
+            "id": "paymentProvider3dsAuthenticationClientSecret",
+            "type": "stringType",
+            "name": "paymentProvider3dsAuthenticationClientSecret",
+            "helpTextResourceId": "paymentProvider3dsAuthenticationClientSecretHelpText",
+            "labelResourceId": "paymentProvider3dsAuthenticationClientSecretLabel",
+            "defaultValue": "D/ilRsfoqHlSUChwAMnlyKdDNd7FMsM7cU/vo02REag=",
+            "required": false
+        },
+        {
+            "id": "paymentProvider3dsAuthenticationEstablishmentCode",
+            "type": "stringType",
+            "name": "paymentProvider3dsAuthenticationEstablishmentCode",
+            "helpTextResourceId": "paymentProvider3dsAuthenticationEstablishmentCodeHelpText",
+            "labelResourceId": "paymentProvider3dsAuthenticationEstablishmentCodeLabel",
+            "defaultValue": "1006993069",
+            "required": false
+        },
+        {
+            "id": "paymentProvider3dsAuthenticationMerchantName",
+            "type": "stringType",
+            "name": "paymentProvider3dsAuthenticationMerchantName",
+            "helpTextResourceId": "paymentProvider3dsAuthenticationMerchantNameHelpText",
+            "labelResourceId": "paymentProvider3dsAuthenticationMerchantNameLabel",
+            "defaultValue": "Loja Exemplo Ltda",
+            "required": false
+        },
+        {
+            "id": "paymentProvider3dsAuthenticationMCC",
+            "type": "stringType",
+            "name": "paymentProvider3dsAuthenticationMCC",
+            "helpTextResourceId": "paymentProvider3dsAuthenticationMCCHelpText",
+            "labelResourceId": "paymentProvider3dsAuthenticationMCCLabel",
+            "defaultValue": "5912",
+            "required": false
+        },
+        {
+            "id": "paymentProviderEndpoint",
+            "type": "stringType",
+            "name": "paymentProviderEndpoint",
+            "helpTextResourceId": "paymentProviderEndpointHelpText",
+            "labelResourceId": "paymentProviderEndpointLabel",
+            "defaultValue": "https://apisandbox.braspag.com.br",
+            "required": false
+        },
+        {
+            "id": "paymentProviderQueryEndpoint",
+            "type": "stringType",
+            "name": "paymentProviderQueryEndpoint",
+            "helpTextResourceId": "paymentProviderQueryEndpointHelpText",
+            "labelResourceId": "paymentProviderQueryEndpointLabel",
+            "defaultValue": "https://apiquerysandbox.braspag.com.br",
+            "required": false
+        },
+        {
+            "id": "paymentProvider3dsAuthenticationEndpoint",
+            "type": "stringType",
+            "name": "paymentProvider3dsAuthenticationEndpoint",
+            "helpTextResourceId": "paymentProvider3dsAuthenticationEndpointHelpText",
+            "labelResourceId": "paymentProvider3dsAuthenticationEndpointLabel",
+            "defaultValue": "https://mpisandbox.braspag.com.br",
+            "required": false
+        },
+        {
+            "id": "automaticCapture",
+            "type": "booleanType",
+            "name": "automaticCapture",
+            "helpTextResourceId": "automaticCaptureHelpText",
+            "labelResourceId": "automaticCaptureLabel",
+            "defaultValue": false
+        },
+        {
+            "id": "useAntiFraudAnalysis",
+            "type": "booleanType",
+            "name": "useAntiFraudAnalysis",
+            "helpTextResourceId": "useAntiFraudAnalysisHelpText",
+            "labelResourceId": "useAntiFraudAnalysisLabel",
+            "defaultValue": false
+        },
+        {
+            "id": "useNativeIntegration",
+            "type": "booleanType",
+            "name": "useNativeIntegration",
+            "helpTextResourceId": "useNativeIntegrationHelpText",
+            "labelResourceId": "useNativeIntegrationLabel",
+            "defaultValue": false
+        },
+        {
+            "id": "antifraudProviderName",
+            "type": "optionType",
+            "name": "antifraudProviderName",
+            "helpTextResourceId": "antifraudProviderNameHelpText",
+            "labelResourceId": "antifraudProviderNameLabel",
+            "defaultValue": "cybersource",
+            "options": [
+                {
+                    "id": "cybersource",
+                    "value": "cybersource",
+                    "labelResourceId": "braspagAntifraudLabel"
+                }
+            ],
+            "required": false
+        },
+        {
+            "id": "antifraudProviderEndpoint",
+            "type": "stringType",
+            "name": "antifraudProviderEndpoint",
+            "helpTextResourceId": "antifraudProviderEndpointHelpText",
+            "labelResourceId": "antifraudProviderEndpointLabel",
+            "defaultValue": "https://risksandbox.braspag.com.br",
+            "required": false
+        },
+        {
+            "id": "antifraudProviderAuthEndpoint",
+            "type": "stringType",
+            "name": "antifraudProviderAuthEndpoint",
+            "helpTextResourceId": "antifraudProviderAuthEndpointHelpText",
+            "labelResourceId": "antifraudProviderAuthEndpointLabel",
+            "defaultValue": "https://authsandbox.braspag.com.br",
+            "required": false
+        },
+        {
+            "id": "antifraudProviderMerchantId",
+            "type": "stringType",
+            "name": "antifraudProviderMerchantId",
+            "helpTextResourceId": "antifraudProviderMerchantIdHelpText",
+            "labelResourceId": "antifraudProviderMerchantIdLabel",
+            "defaultValue": "9F75A292-B361-413B-B011-E53FD18150EE",
+            "required": false
+        },
+        {
+            "id": "antifraudProviderClientId",
+            "type": "stringType",
+            "name": "antifraudProviderClientId",
+            "helpTextResourceId": "antifraudProviderClientIdHelpText",
+            "labelResourceId": "antifraudProviderClientIdLabel",
+            "defaultValue": "8bb3e7cf-fa55-445b-a17a-7426c82cdf42",
+            "required": false
+        },
+        {
+            "id": "antifraudProviderClientSecret",
+            "type": "stringType",
+            "name": "antifraudProviderClientSecret",
+            "helpTextResourceId": "antifraudProviderClientSecretHelpText",
+            "labelResourceId": "antifraudProviderClientSecretLabel",
+            "defaultValue": "+DVbTIw2fDkVoWHlvffhjyBj9ZY6FfwSvvwfv7JhXQQ=",
+            "required": false
+        },
+        {
+            "id": "antifraudProviderFirstOperation",
+            "type": "optionType",
+            "name": "antifraudProviderFirstOperation",
+            "helpTextResourceId": "antifraudProviderFirstOperationHelpText",
+            "labelResourceId": "antifraudProviderFirstOperationLabel",
+            "defaultValue": "",
+            "options": [
+                {
+                    "id": "analyze",
+                    "value": "analyze",
+                    "labelResourceId": "analyzeLabel"
+                },
+                {
+                    "id": "authorize",
+                    "value": "authorize",
+                    "labelResourceId": "authorizeLabel"
+                }
+            ],
+            "required": false
+        },
+        {
+            "id": "antifraudProviderSecondOperation",
+            "type": "optionType",
+            "name": "antifraudProviderSecondOperation",
+            "helpTextResourceId": "antifraudProviderSecondOperationHelpText",
+            "labelResourceId": "antifraudProviderSecondOperationLabel",
+            "defaultValue": "",
+            "options": [
+                {
+                    "id": "analyze",
+                    "value": "analyze",
+                    "labelResourceId": "analyzeLabel"
+                },
+                {
+                    "id": "authorize",
+                    "value": "authorize",
+                    "labelResourceId": "authorizeLabel"
+                }
+            ],
+            "required": false
+        },
+        {
+            "id": "antifraudProviderSequenceCriteria",
+            "type": "optionType",
+            "name": "antifraudProviderSequenceCriteria",
+            "helpTextResourceId": "antifraudProviderSequenceCriteriaHelpText",
+            "labelResourceId": "antifraudProviderSequenceCriteriaLabel",
+            "defaultValue": "",
+            "options": [
+                {
+                    "id": "always",
+                    "value": "Always",
+                    "labelResourceId": "AlwaysLabel"
+                },
+                {
+                    "id": "onSuccess",
+                    "value": "OnSuccess",
+                    "labelResourceId": "OnSuccessLabel"
+                }
+            ],
+            "required": false
+        },
+        {
+            "id": "antifraudProviderCaptureOnLowRisk",
+            "type": "booleanType",
+            "name": "antifraudProviderCaptureOnLowRisk",
+            "helpTextResourceId": "antifraudProviderCaptureOnLowRiskHelpText",
+            "labelResourceId": "antifraudProviderCaptureOnLowRiskLabel",
+            "defaultValue": false
+        },
+        {
+            "id": "antifraudProviderVoidOnHighRisk",
+            "type": "booleanType",
+            "name": "antifraudProviderVoidOnHighRisk",
+            "helpTextResourceId": "antifraudProviderVoidOnHighRiskHelpText",
+            "labelResourceId": "antifraudProviderVoidOnHighRiskLabel",
+            "defaultValue": false
+        }
+    ]
+}

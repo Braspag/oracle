@@ -1,0 +1,65 @@
+<!-- oc layout: panels -->
+<div class="row">
+    <div class="oc-panel col-md-12 payment-method" data-oc-id="panel-0">
+        <!-- Boleto-->
+        <!-- oc section: cash_payment- -->
+        <div id="x-cashPayment-content-block" class="col-sm-12 x-cashPayment-content-block">
+            <div id="x-cashPayment-content" class="x-cashPayment-content-title">
+                <label id="lbl-cashPayment-content-title" class="lbl-cashPayment-content-title">Boleto bancário</label>
+            </div>
+            <div id="x-cashPayment-content-body" class="x-cashPayment-content-body">
+                <img class="cash-icon" src="http://vitao.vteximg.com.br/arquivos/payment_boleto.png" alt="Cash Payment">
+                <input type="button" name="cash-payment" id="cash-payment" class="cash-payment" value="Confirmar!"
+                    data-bind="click: createCashOrder, enable: order().enableOrderButton">
+            </div>
+        </div>
+        <!-- /oc -->
+
+        <!-- Cartão de crédito-->
+        <!-- oc section: card_payment -->
+        <div id="x-cardPayment-content-block" class="col-sm-12 x-cardPayment-content-block">
+            <div id="x-cardPayment-content" class="x-cardPayment-content-title">
+                <label id="lbl-cardPayment-content-title" class="lbl-cardPayment-content-title">Cartão</label>
+            </div>
+            <div id="x-cardPayment-content-body" class="x-cardPayment-content-body">
+                <label class="option-container" for="credit_card_payment_type">
+                  <input id="credit_card_payment_type" name="credit_card_payment_type" type="radio" data-bind="click: disableDebitCardRadioButton()">
+                  <span class="checkmark"></span>
+                  Cartão de crédito</label>
+                <label  class="option-container" for="debit_card_payment_type">
+                  <input id="debit_card_payment_type" name="debit_card_payment_type" type="radio" data-bind="click: disableCreditCardRadioButton()">
+                  <span class="checkmark"></span>
+                  Cartão de débito</label>
+            </div>
+            <div class="save-card-option" data-bind="visible: user().loggedIn()">
+              
+              <label class="option-container" for="save-credit-card">
+                <input id="save-credit-card" type="checkbox" data-bind="event: {change: showCardAlias}">
+                Salvar cartão
+              </label>
+            </div>
+            <input id="save-credit-card-alias" type="text" placeholder="Alias do cartão" class="save-credit-card-alias">
+            <input type="button" name="card-payment-button-confirm" id="card-payment-button-confirm" data-bind="click: createCardOrder3ds, enable: order().enableOrderButton"
+                class="card-payment-button-confirm" value="Confirmar!">
+        </div>
+        
+        <!-- Tokenização do cartão-->
+        <!-- oc section: save_card -->
+          <div id="save-cards-content-block" class="col-sm-12 save-cards-content-block" data-bind="visible: (user().loggedIn() && checkSavedCards(user()))">
+            <div class="save-card-content">
+              <label>Pagar com cartão salvo: </label>
+              <select id="saved-card-list" class="saved-card-list" data-bind="options: populateUserSavedCards(user().dynamicProperties()), optionsCaption: 'Selecione...', event: { change: showCardDetails }">
+              </select>
+              <div id="saved_card_details" class="saved_card_details">
+                <label id="saved_card_alias"></label>
+                <label id="saved_card_token"></label>
+                <label id="saved_card_brand"></label>
+                <label id="saved_card_last_digits"></label>
+                <input id="saved_card_cvv" type="password" placeholder="Cód. Seg.">
+              </div>
+            </div>
+          </div>
+        <!-- /oc -->
+    </div>
+</div>
+<!-- /oc -->

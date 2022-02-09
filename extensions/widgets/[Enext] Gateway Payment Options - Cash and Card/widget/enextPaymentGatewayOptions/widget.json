@@ -1,0 +1,20 @@
+{
+  "config": {},
+  "global": false,
+  "globalEnabled": false,
+  "translations": [
+    {
+      "name": "[Enext] Braspag Payment Gateway",
+      "language": "en"
+    },
+    {
+      "name": "[Enext] Braspag Payment Gateway",
+      "language": "pt_BR"
+    }
+  ],
+  "pageTypes": ["checkout"],
+  "imports": ["order","payment","user"],
+  "javascript": "payment-gateway-options",
+  "jsEditable": true,
+  "minWidth": 4
+}

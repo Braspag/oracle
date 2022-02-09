@@ -1,0 +1,8 @@
+**/node_modules/
+**/package-lock.json
+**/*.zip
+**/src/
+**/3ds20.html
+**/BP.Mpi.3ds20.min.js
+**/sse_deploy
+**/A*.md

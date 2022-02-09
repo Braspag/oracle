@@ -1,0 +1,9 @@
+{
+  "extensionID": "89a3ef29-8038-4851-8a17-be098468817e",
+  "developerID": "Rogerio Santos",
+  "createdBy": "Enext",
+  "name": "Enext Custom Payment Gateway",
+  "version": 8,
+  "timeCreated": "2020-02-10",
+  "description": "An application that connects your store with any payment provider or anti fraud provider."
+}

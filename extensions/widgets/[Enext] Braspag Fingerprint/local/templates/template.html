@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Braspag Checkout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .x-cashPayment-content-block {
+      height: 90px;
+      margin-bottom: 20px;
+      width: auto;
+    }
+
+    .x-cashPayment-content-title {
+      border-bottom: solid 2.5px gray;
+      border-radius: 5px;
+      height: auto;
+      margin-bottom: 10px;
+      width: 300px;
+    }
+
+    .lbl-cashPayment-content-title {
+      display: block;
+      margin-bottom: 2.5px;
+      text-align: center;
+    }
+
+    .x-cashPayment-content-body {
+      height: auto;
+      width: auto;
+    }
+
+    .cash-icon {
+      display: block;
+      float: left;
+      height: 50px;
+      margin-left: 40px;
+      width: 90px;
+    }
+
+    .cash-payment {
+      border-radius: 5px;
+      cursor: pointer;
+      display: inline-block;
+      height: 35px;
+      margin-left: 20px;
+      margin-top: 7px;
+      width: 100px;
+    }
+
+    .x-cardPayment-content-block {
+      height: auto;
+      margin-bottom: 10px;
+      width: auto;
+    }
+
+    .x-cardPayment-content-title {
+      border-bottom: solid 2.5px gray;
+      border-radius: 5px;
+      height: auto;
+      margin-bottom: 10px;
+      width: 300px;
+    }
+
+    .lbl-cardPayment-content-title {
+      display: block;
+      margin-bottom: 2.5px;
+      text-align: center;
+    }
+
+    .x-cardPayment-content-body {
+      height: auto;
+      width: auto;
+    }
+
+    .card-payment-button-confirm {
+      border-radius: 5px;
+      cursor: pointer;
+      height: 35px;
+      width: 100px;
+      display: block;
+    }
+
+    .save-cards-content-block {
+      width: auto;
+      height: auto;
+      margin-bottom: 10px;
+      display: none;
+    }
+
+    .save-card-option {
+      width: 120px;
+      height: auto;
+      margin-bottom: 10px;
+      cursor: pointer;
+      display: inline-block;
+    }    
+    
+    .save-card-content{
+      width: auto;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .save-credit-card-input-alias{
+      width: auto;
+      height: 20px;
+      font-size: 14px;
+    }
+    .saved_card_details{
+      width: 200px;
+      height: auto;
+      display: inline-block;
+      background-color: brown;
+    }
+  </style>
+  <script>
+    window.onload = function(e){
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-T643LK7');
+    };
+
+    // document.body.innerHTML += '<noscript></noscript>';
+    // document.onloadend = function(){
+    //   document.body.innerHTML += '<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T643LK7 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>';
+    // }
+    
+    function showSavedCardDetails(e) {
+      console.log(e.value);
+      let alias = document.getElementById("saved_card_alias");
+      alias.innerText = e.value;
+    };
+
+    function showAliasInput(){
+      let input = document.getElementById("save-credit-card");
+    }
+  </script>
+</head>
+
+<body>
+  <!-- Boleto-->
+  <!-- oc section: cash_payment- -->
+  <div id="x-cashPayment-content-block" class="row col-sm-12 x-cashPayment-content-block">
+    <div id="x-cashPayment-content" class="x-cashPayment-content-title">
+      <label id="lbl-cashPayment-content-title" class="lbl-cashPayment-content-title">Boleto bancário</label>
+    </div>
+    <div id="x-cashPayment-content-body" class="x-cashPayment-content-body">
+      <img class="cash-icon" src="http://vitao.vteximg.com.br/arquivos/payment_boleto.png" alt="Cash Payment">
+      <input type="button" name="cash-payment" id="cash-payment" class="cash-payment" value="Confirm"
+        data-bind="click: createCashOrder, enable: order().enableOrderButton">
+    </div>
+  </div>
+
+  <!-- Cartão de crédito-->
+  <!-- oc section: card_payment -->
+  <!--<div id="CC-enextPaymentGatewayOptions-creditCard" class="checkout row center-block col-xs-12" style="padding-top:15px;">-->
+  <div id="x-cardPayment-content-block" class="row col-sm-12 x-cardPayment-content-block">
+    <div id="x-cardPayment-content" class="x-cardPayment-content-title">
+      <label id="lbl-cardPayment-content-title" class="lbl-cardPayment-content-title">Cartão de Cŕedito</label>
+    </div>
+    <div id="x-cardPayment-content-body" class="x-cardPayment-content-body">
+
+      <input id="credit_card_payment_type" name="credit_card_payment_type" type="radio"
+        data-bind="click: disableDebitCardRadioButton()">
+      <label for="credit_card_payment_type">Cartão de crédito</label>
+
+      <input id="debit_card_payment_type" name="debit_card_payment_type" type="radio"
+        data-bind="click: disableCreditCardRadioButton()">
+      <label for="debit_card_payment_type">Cartão de débito</label>
+
+    </div>
+    <div class="save-card-option">
+        <input id="save-credit-card" type="checkbox" onclick="">
+        <label for="save-credit-card">Salvar cartão</label>
+    </div>
+    <input type="text" placeholder="Alias para identificar o cartão" class="save-credit-card-input-alias">
+
+    <input type="button" name="card-payment-button-confirm" id="card-payment-button-confirm"
+      data-bind="click: createCardOrder, enable: order().enableOrderButton" class="card-payment-button-confirm"
+      value="Confirm">
+  </div>
+
+  <div id="save-cards-content-block" class="save-cards-content-block">
+
+    <div class="save-card-content">
+      <label>Pagar com cartão salvo: </label>
+      <select id="saved-card-list" class="saved-card-list" onchange="showSavedCardDetails(this)">
+        <option value="card0">{{Alias}}</option>
+        <option value="card1">{{Alias1}}</option>
+        <option value="card2">{{Alias2}}</option>
+        <option value="card3">{{Alias3}}</option>
+      </select>
+      <div id="saved_card_details" class="saved_card_details">
+        <label id="saved_card_alias"></label>
+        <label id="saved_card_token"></label>
+        <label id="saved_card_brand"></label>
+        <label id="saved_card_last_digits"></label>
+      </div>
+    </div>
+  </div>
+  <!-- /oc -->
+</body>
+</html>

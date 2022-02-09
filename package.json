@@ -1,0 +1,39 @@
+{
+  "name": "enext-custom-payment-gateway-braspag",
+  "version": "1.0.0",
+  "engines": {
+    "node": "=10.16.0"
+  },
+  "private": true,
+  "description": "Administrate requests to payment gateway and ante fraud",
+  "main": "application/app/bin/server.js",
+  "authenticatedUrls": [],
+  "publicUrls": [
+    "/ccstorex/custom/v1/payment",
+    "/ccstorex/custom/v1/notification",
+    "/ccstorex/custom/v1/system/check"
+  ],
+  "dependencies": {
+    "atob": "^2.1.2",
+    "btoa": "^1.2.1",
+    "express": "^4.16.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "response-time": "^2.3.2",
+    "sleep": "^5.2.3",
+    "winston": "^3.2.1",
+    "winston-loggly-bulk": "^3.0.1"
+  },
+  "scripts": {
+    "start": "node application/app/bin/server.js",
+    "dev": "nodemon --exec node application/app/bin/server.js",
+    "build": "node_modules/@babel/cli/bin/babel.js application/app --out-dir application/src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "enext",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5"
+  }
+}

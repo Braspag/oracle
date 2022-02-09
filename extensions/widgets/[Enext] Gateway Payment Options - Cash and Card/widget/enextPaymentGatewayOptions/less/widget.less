@@ -1,0 +1,204 @@
+#enextPaymentGatewayOptions_v1-wi600017 {
+
+	.payment-method {
+	  display: flex;
+	  flex-direction: column;
+	  .x-cashPayment-content-block {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		border: 2px solid black;
+		text-align: center;
+		align-items: center;
+		padding: 15px;
+		.x-cashPayment-content-title {
+		  width: 100%;
+		  text-align: center;
+		  font-family: "Roboto", sans-serif;
+		  font-size: 20px;
+		}
+		.x-cashPayment-content-body {
+		  width: 100%;
+	
+		  .cash-icon {
+			width: 100px;
+			float: left;
+			margin-left: calc(50% - 50px) !important; 
+			position: relative;
+		  }
+		  .cash-payment {
+			background: white;
+			margin-top: -20px;
+			color: #000000;
+			border: 2px solid #000000;
+			text-transform: uppercase;
+			height: 40px;
+			width: 80%;
+			font-size: 15px;
+			font-weight: bold;
+			font-family: "Roboto", sans-serif;
+			cursor: pointer;
+			-webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05),
+			  0 6px 6px rgba(0, 0, 0, 0.04);
+			-moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05),
+			  0 6px 6px rgba(0, 0, 0, 0.04);
+			-ms-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05),
+			  0 6px 6px rgba(0, 0, 0, 0.04);
+			-o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05),
+			  0 6px 6px rgba(0, 0, 0, 0.04);
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05),
+			  0 6px 6px rgba(0, 0, 0, 0.04);
+			-webkit-transition: all 0.2s linear;
+			-moz-transition: all 0.2s linear;
+			-ms-transition: all 0.2s linear;
+			-o-transition: all 0.2s linear;
+			transition: all 0.2s linear;
+			&:hover {
+			  color: #ffffff;
+			  background-color: rgb(0, 0, 0);
+			}
+		  }
+		}
+	  }
+	
+	  .x-cardPayment-content-block {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		border: 2px solid black;
+		text-align: center;
+		align-items: center;
+		.x-cardPayment-content-title {
+		  width: 100%;
+		  text-align: center;
+		  font-family: "Roboto", sans-serif;
+		  font-size: 20px;
+		}
+		.x-cardPayment-content-body {
+		  width: 100%;
+		  margin-top: 25px;
+		  
+		  .option-container {
+			position: relative;
+			padding-left: 35px;
+			margin-bottom: 12px;
+			cursor: pointer;
+			font-size: 15px;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			input {
+			  position: absolute;
+			  opacity: 0;
+			  cursor: pointer;
+			  height: 0;
+			  width: 0;
+			}
+			.checkmark {
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  height: 25px;
+			  width: 25px;
+			  background-color: #eee;
+			}
+			&:hover input ~ .checkmark {
+			  background-color: #ccc;
+			}
+			input:checked ~ .checkmark {
+			  background-color: #000000;
+			}
+			.checkmark:after {
+			  content: "";
+			  position: absolute;
+			  display: none;
+			}
+			input:checked ~ .checkmark:after {
+			  display: block;
+			}
+			.checkmark:after {
+			  left: 9px;
+			  top: 5px;
+			  width: 5px;
+			  height: 10px;
+			  border: solid white;
+			  border-width: 0 3px 3px 0;
+			  -webkit-transform: rotate(45deg);
+			  -ms-transform: rotate(45deg);
+			  transform: rotate(45deg);
+			}
+		  }
+		}
+	  }
+	
+	  .card-payment-button-confirm {
+		background: white;
+		color: #000000;
+		border: 2px solid #000000;
+		text-transform: uppercase;
+		height: 40px;
+		width: 80%;
+		font-size: 15px;
+		font-weight: bold;
+		font-family: "Roboto", sans-serif;
+		cursor: pointer;
+		-webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05),
+		  0 6px 6px rgba(0, 0, 0, 0.04);
+		-moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05),
+		  0 6px 6px rgba(0, 0, 0, 0.04);
+		-ms-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05),
+		  0 6px 6px rgba(0, 0, 0, 0.04);
+		-o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05),
+		  0 6px 6px rgba(0, 0, 0, 0.04);
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.04);
+		-webkit-transition: all 0.2s linear;
+		-moz-transition: all 0.2s linear;
+		-ms-transition: all 0.2s linear;
+		-o-transition: all 0.2s linear;
+		transition: all 0.2s linear;
+		&:hover {
+		  color: #ffffff;
+		  background-color: rgb(0, 0, 0);
+		}
+	  }
+	
+	  .save-cards-content-block {
+		width: auto;
+		height: auto;
+		margin-bottom: 10px;
+		display: block;
+	  }
+	
+	  .save-card-option {
+		width: 140px;
+		height: auto;
+		margin-bottom: 10px;
+		cursor: pointer;
+		display: inline-block;
+	  }
+	
+	  .save-card-content {
+		width: auto;
+		height: auto;
+		margin-bottom: 20px;
+	  }
+	
+	  .save-credit-card-alias {
+		width: auto;
+		height: 20px;
+		font-size: 14px;
+		display: none;
+	  }
+	  .saved_card_details {
+		width: auto;
+		height: auto;
+		display: none;
+	  }
+	
+	  .saved_card_details label {
+		display: block;
+	  }
+	}
+	
+	}

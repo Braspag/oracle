@@ -1,0 +1,20 @@
+{
+  "config": {},
+  "global": false,
+  "globalEnabled": false,
+  "translations": [
+    {
+      "name": "[Enext] Braspag Fingerprint Widget",
+      "language": "en"
+    },
+    {
+      "name": "[Enext] Braspag Fingerprint Widget",
+      "language": "pt_BR"
+    }
+  ],
+  "pageTypes": ["checkout"],
+  "imports": ["order","payment"],
+  "javascript": "braspag-fingerprint-options",
+  "jsEditable": true,
+  "minWidth": 4
+}
